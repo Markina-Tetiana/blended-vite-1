@@ -6,15 +6,26 @@ import Heading from './components/Heading/Heading';
 import Section from './components/Section/Section';
 import Statistics from './components/Statistics/Statistics';
 
+import blogCardData from './data/article.json';
+import stats from './data/stats.json';
+
 export const App = () => {
   return (
     <Section>
       <Container>
         <Heading title="Task 1 Blog Card" bottom />
-        <BlogCard />
+        <BlogCard
+          avatar={blogCardData.avatar}
+          description={blogCardData.description}
+          name={blogCardData.name}
+          poster={blogCardData.poster}
+          tag={blogCardData.tag}
+          postedAt={blogCardData.postedAt}
+          title={blogCardData.title}
+        />
 
         <Heading title="Task 2 Statistics" top bottom />
-        <Statistics title="Main Statistics" />
+        <Statistics title="Main Statistics" stats={stats} />
 
         <Heading title="Task 3 Forbes list" top bottom />
         <ForbesList />
